@@ -1,19 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Lista de Tarefas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .app {
+      background-color: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #5e4b8b;
+    }
+
+    .input-container {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #5e4b8b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #7d6ab5;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      background-color: #f3f0ff;
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    li span {
+      word-break: break-word;
+    }
+
+    .remove {
+      background: none;
+      border: none;
+      color: red;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <h1> Entendendo Git </h1>
-    <ul>
-        <li>Clone</li>
-        <li>Push</li>
-        <li> Marcio Gay </li>
-    </ul>    
+  <div class="app">
+    <h1>📝 Lista de Tarefas</h1>
+    <div class="input-container">
+      <input type="text" id="taskInput" placeholder="Nova tarefa...">
+      <button onclick="addTask()">Adicionar</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
 
+  <script>
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const taskText = input.value.trim();
+      if (taskText === "") return;
 
+      const li = document.createElement("li");
+      li.innerHTML = `<span>${taskText}</span> <button class="remove" onclick="removeTask(this)">✖</button>`;
+      document.getElementById("taskList").appendChild(li);
+      input.value = "";
+    }
+
+    function removeTask(btn) {
+      btn.parentElement.remove();
+    }
+  </script>
 </body>
 </html>
