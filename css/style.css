@@ -1,0 +1,301 @@
+/* =============================================
+   1. VARIÁVEIS GLOBAIS E RESET
+   ============================================= */
+
+   :root {
+    --cor-primaria: #0d0d0d;
+    --cor-secundaria: #1a1a1a;
+    --cor-destaque: #00ff99;
+    --cor-texto: #f0f0f0;
+    --cor-texto-secundario: #a0a0a0;
+    --fonte-titulo: 'Montserrat', sans-serif; /* Adicione no seu HTML via Google Fonts */
+    --fonte-texto: 'Lato', sans-serif;         /* Adicione no seu HTML via Google Fonts */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-texto);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--cor-destaque);
+}
+
+section {
+    padding: 6rem 0;
+    border-bottom: 1px solid #222;
+}
+
+/* =============================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ============================================= */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--cor-secundaria);
+    transition: background-color 0.3s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+.logo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-destaque);
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--cor-destaque);
+}
+
+/* Classe que será adicionada pelo JavaScript */
+nav a.active {
+    color: var(--cor-destaque);
+    font-weight: bold;
+}
+
+/* =============================================
+   3. SEÇÕES INDIVIDUAIS
+   ============================================= */
+
+/* Seção de Início (Hero) */
+#inicio {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#inicio .container {
+    max-width: 800px;
+}
+
+#inicio h1 {
+    font-size: 3.5rem;
+}
+
+#inicio h1 span {
+    color: var(--cor-destaque);
+}
+
+#inicio p {
+    font-size: 1.2rem;
+    color: var(--cor-texto-secundario);
+}
+
+/* Seção Sobre */
+#sobre .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+#sobre img {
+    max-width: 100%;
+    border-radius: 50%;
+    border: 3px solid var(--cor-destaque);
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.2);
+}
+
+/* Seção Projetos */
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.projeto-card {
+    background-color: var(--cor-secundaria);
+    border-radius: 8px;
+    border: 1px solid #222;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.projeto-info {
+    padding: 1.5rem;
+}
+
+.projeto-info h3 {
+    margin-top: 0;
+    color: var(--cor-destaque);
+}
+
+.projeto-links a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+/* Seção Habilidades */
+.grid-habilidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.habilidade-card {
+    background-color: var(--cor-secundaria);
+    padding: 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.habilidade-card:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-primaria);
+    transform: scale(1.05);
+}
+
+/* Seção Contato */
+#contato form {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#contato input, #contato textarea {
+    background-color: var(--cor-secundaria);
+    border: 1px solid #333;
+    color: var(--cor-texto);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#contato input:focus, #contato textarea:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+}
+
+#contato button {
+    background-color: var(--cor-destaque);
+    color: var(--cor-primaria);
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#contato button:hover {
+    background-color: #00cc88;
+    transform: scale(1.02);
+}
+
+.redes-sociais {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.redes-sociais a {
+    color: var(--cor-texto-secundario);
+    font-size: 1.8rem;
+    margin: 0 1rem;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block; /* para a animação de transform funcionar */
+}
+
+.redes-sociais a:hover {
+    color: var(--cor-destaque);
+    transform: scale(1.2);
+}
+
+/* =============================================
+   4. CLASSES DE ANIMAÇÃO (JAVASCRIPT)
+   ============================================= */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   5. RODAPÉ
+   ============================================= */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--cor-secundaria);
+    margin-top: -1px; /* Para sobrepor a borda da última seção */
+}
