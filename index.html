@@ -1,13 +1,344 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teste git</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Nome | Portfólio</title>
+    <style>
+        /* Estilos Globais e Reset */
+        :root {
+            --cor-primaria: #0d0d0d;
+            --cor-secundaria: #1a1a1a;
+            --cor-destaque: #00ff99;
+            --cor-texto: #f0f0f0;
+            --cor-texto-secundario: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--cor-primaria);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1, h2, h3 {
+            color: var(--cor-destaque);
+            margin-bottom: 1rem;
+        }
+
+        section {
+            padding: 6rem 0;
+            border-bottom: 1px solid var(--cor-secundaria);
+        }
+
+        /* Cabeçalho e Navegação */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(13, 13, 13, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--cor-secundaria);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--cor-destaque);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--cor-destaque);
+        }
+
+        /* Seção de Início (Hero) */
+        #inicio {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        #inicio .container {
+            max-width: 800px;
+        }
+
+        #inicio h1 {
+            font-size: 3.5rem;
+        }
+
+        #inicio p {
+            font-size: 1.2rem;
+            color: var(--cor-texto-secundario);
+        }
+
+        /* Seção Sobre */
+        #sobre .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        #sobre img {
+            max-width: 100%;
+            border-radius: 50%;
+            border: 3px solid var(--cor-destaque);
+        }
+
+        /* Seção Projetos */
+        .grid-projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .projeto-card {
+            background-color: var(--cor-secundaria);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .projeto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 153, 0.1);
+        }
+
+        .projeto-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .projeto-info {
+            padding: 1.5rem;
+        }
+
+        .projeto-info h3 {
+            margin-top: 0;
+        }
+
+        .projeto-links a {
+            color: var(--cor-destaque);
+            text-decoration: none;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+
+        /* Seção Habilidades */
+        .grid-habilidades {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .habilidade-card {
+            background-color: var(--cor-secundaria);
+            padding: 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Seção Contato */
+        #contato form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contato input, #contato textarea {
+            background-color: var(--cor-secundaria);
+            border: 1px solid var(--cor-destaque);
+            color: var(--cor-texto);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+
+        #contato button {
+            background-color: var(--cor-destaque);
+            color: var(--cor-primaria);
+            border: none;
+            padding: 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #contato button:hover {
+            background-color: #00cc88;
+        }
+
+        .redes-sociais {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .redes-sociais a {
+            color: var(--cor-texto-secundario);
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .redes-sociais a:hover {
+            color: var(--cor-destaque);
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: var(--cor-secundaria);
+        }
+    </style>
 </head>
 <body>
-  <h1>Teste git</h1>
-  <br>
-  <p>alterado pelo thiago</p>
+
+    <header>
+        <nav class="container">
+            <a href="#inicio" class="logo">Seu Nome</a>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <div class="container">
+                <h1>Olá, eu sou [Seu Nome]</h1>
+                <p>Desenvolvedor(a) Web | Designer | Apaixonado(a) por Tecnologia</p>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+                <div>
+                    <img src="https://via.placeholder.com/300" alt="Foto de [Seu Nome]">
+                </div>
+                <div>
+                    <h2>Sobre Mim</h2>
+                    <p>
+                        Sou um profissional dedicado e criativo com experiência em [sua área]. Tenho paixão por resolver problemas complexos e criar soluções elegantes e eficientes.
+                    </p>
+                    <p>
+                        No meu tempo livre, gosto de explorar novas tecnologias, contribuir para projetos de código aberto e [seu hobby].
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <div class="container">
+                <h2>Meus Projetos</h2>
+                <div class="grid-projetos">
+                    <div class="projeto-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Nome do Projeto 1">
+                        <div class="projeto-info">
+                            <h3>Nome do Projeto 1</h3>
+                            <p>Uma breve descrição do projeto, as tecnologias utilizadas e o seu papel.</p>
+                            <div class="projeto-links">
+                                <a href="#" target="_blank">Ver Site</a>
+                                <a href="#" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projeto-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Nome do Projeto 2">
+                        <div class="projeto-info">
+                            <h3>Nome do Projeto 2</h3>
+                            <p>Uma breve descrição do projeto, as tecnologias utilizadas e o seu papel.</p>
+                            <div class="projeto-links">
+                                <a href="#" target="_blank">Ver Site</a>
+                                <a href="#" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <div class="container">
+                <h2>Minhas Habilidades</h2>
+                <div class="grid-habilidades">
+                    <div class="habilidade-card">HTML5</div>
+                    <div class="habilidade-card">CSS3</div>
+                    <div class="habilidade-card">JavaScript</div>
+                    <div class="habilidade-card">React</div>
+                    <div class="habilidade-card">Node.js</div>
+                    <div class="habilidade-card">Design UI/UX</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <form action="#" method="POST">
+                    <input type="text" name="nome" placeholder="Seu Nome" required>
+                    <input type="email" name="email" placeholder="Seu E-mail" required>
+                    <textarea name="mensagem" rows="5" placeholder="Sua Mensagem" required></textarea>
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+                <div class="redes-sociais">
+                    <a href="#" target="_blank">LinkedIn</a>
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 [Seu Nome]. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
