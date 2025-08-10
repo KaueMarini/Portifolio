@@ -1,15 +1,15 @@
 /* =============================================
    1. VARIÁVEIS GLOBAIS E RESET
    ============================================= */
-
-   :root {
+:root {
     --cor-primaria: #0d0d0d;
     --cor-secundaria: #1a1a1a;
     --cor-destaque: #00ff99;
     --cor-texto: #f0f0f0;
     --cor-texto-secundario: #a0a0a0;
-    --fonte-titulo: 'Montserrat', sans-serif; /* Adicione no seu HTML via Google Fonts */
-    --fonte-texto: 'Lato', sans-serif;         /* Adicione no seu HTML via Google Fonts */
+    --fonte-titulo: 'Montserrat', sans-serif;
+    --fonte-texto: 'Lato', sans-serif;
+    --header-height: 4.5rem; /* Altura do header para cálculos */
 }
 
 * {
@@ -29,47 +29,54 @@ body {
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 }
 
 h1, h2, h3 {
     font-family: var(--fonte-titulo);
     color: var(--cor-texto);
-    margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: center;
     margin-bottom: 3rem;
     color: var(--cor-destaque);
 }
 
 section {
-    padding: 6rem 0;
+    padding: 5rem 0;
     border-bottom: 1px solid #222;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* =============================================
    2. CABEÇALHO E NAVEGAÇÃO
    ============================================= */
-
-header {
+.header {
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     background-color: rgba(13, 13, 13, 0.85);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid var(--cor-secundaria);
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-nav {
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem;
+    height: var(--header-height);
 }
 
 .logo {
@@ -80,81 +87,80 @@ nav {
     text-decoration: none;
 }
 
-nav ul {
+.nav-menu {
     display: flex;
     list-style: none;
+    gap: 1.5rem;
 }
 
-nav ul li {
-    margin-left: 2rem;
-}
-
-nav a {
+.nav-link {
     color: var(--cor-texto);
     text-decoration: none;
     font-size: 1rem;
     position: relative;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
 }
 
-nav a:hover {
+.nav-link:hover, .nav-link.active {
     color: var(--cor-destaque);
 }
 
-/* Classe que será adicionada pelo JavaScript */
-nav a.active {
-    color: var(--cor-destaque);
+.nav-link.active {
     font-weight: bold;
 }
 
 /* =============================================
-   3. SEÇÕES INDIVIDUAIS
+   3. SEÇÕES
    ============================================= */
 
-/* Seção de Início (Hero) */
-#inicio {
+/* Hero (Início) */
+.hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
 }
 
-#inicio .container {
+.hero-content {
     max-width: 800px;
 }
 
-#inicio h1 {
-    font-size: 3.5rem;
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
 }
 
-#inicio h1 span {
+.hero h1 span {
     color: var(--cor-destaque);
 }
 
-#inicio p {
-    font-size: 1.2rem;
+.hero p {
+    font-size: 1.1rem;
     color: var(--cor-texto-secundario);
+    margin-top: 1rem;
 }
 
-/* Seção Sobre */
-#sobre .container {
+/* Sobre */
+.about-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
+    gap: 2rem;
     align-items: center;
 }
 
-#sobre img {
-    max-width: 100%;
+.about-image img {
     border-radius: 50%;
     border: 3px solid var(--cor-destaque);
-    box-shadow: 0 0 20px rgba(0, 255, 153, 0.2);
+    box-shadow: 0 0 25px rgba(0, 255, 153, 0.2);
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin: 0 auto;
 }
 
-/* Seção Projetos */
+/* Projetos */
 .grid-projetos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
@@ -163,19 +169,12 @@ nav a.active {
     border-radius: 8px;
     border: 1px solid #222;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .projeto-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
-
-.projeto-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .projeto-info {
@@ -183,8 +182,8 @@ nav a.active {
 }
 
 .projeto-info h3 {
-    margin-top: 0;
     color: var(--cor-destaque);
+    margin-bottom: 0.5rem;
 }
 
 .projeto-links a {
@@ -192,23 +191,26 @@ nav a.active {
     text-decoration: none;
     margin-right: 1rem;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+.projeto-links a:hover {
+    color: #fff;
 }
 
-/* Seção Habilidades */
+/* Habilidades */
 .grid-habilidades {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1.5rem;
     text-align: center;
 }
 
 .habilidade-card {
     background-color: var(--cor-secundaria);
-    padding: 2rem;
+    padding: 2rem 1rem;
     border-radius: 8px;
-    font-size: 1.1rem;
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
 }
 
 .habilidade-card:hover {
@@ -217,15 +219,16 @@ nav a.active {
     transform: scale(1.05);
 }
 
-/* Seção Contato */
-#contato form {
+/* Contato */
+.contact-form {
     max-width: 600px;
     margin: 2rem auto 0;
     display: flex;
     flex-direction: column;
 }
 
-#contato input, #contato textarea {
+.contact-form input,
+.contact-form textarea {
     background-color: var(--cor-secundaria);
     border: 1px solid #333;
     color: var(--cor-texto);
@@ -233,15 +236,17 @@ nav a.active {
     margin-bottom: 1rem;
     border-radius: 5px;
     font-size: 1rem;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-#contato input:focus, #contato textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     outline: none;
     border-color: var(--cor-destaque);
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
 }
 
-#contato button {
+.btn-submit {
     background-color: var(--cor-destaque);
     color: var(--cor-primaria);
     border: none;
@@ -250,42 +255,44 @@ nav a.active {
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#contato button:hover {
+.btn-submit:hover, .btn-submit:focus {
     background-color: #00cc88;
     transform: scale(1.02);
 }
 
-.redes-sociais {
+.social-media {
     text-align: center;
     margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
-.redes-sociais a {
+.social-media a {
     color: var(--cor-texto-secundario);
     font-size: 1.8rem;
-    margin: 0 1rem;
-    transition: color 0.3s, transform 0.3s;
-    display: inline-block; /* para a animação de transform funcionar */
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
 }
 
-.redes-sociais a:hover {
+.social-media a:hover, .social-media a:focus {
     color: var(--cor-destaque);
     transform: scale(1.2);
 }
 
 /* =============================================
-   4. CLASSES DE ANIMAÇÃO (JAVASCRIPT)
+   4. ANIMAÇÕES
    ============================================= */
-.hidden {
+.section-hidden {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.show {
+.section-show {
     opacity: 1;
     transform: translateY(0);
 }
@@ -293,9 +300,52 @@ nav a.active {
 /* =============================================
    5. RODAPÉ
    ============================================= */
-footer {
+.footer {
     text-align: center;
     padding: 2rem 0;
     background-color: var(--cor-secundaria);
     margin-top: -1px; /* Para sobrepor a borda da última seção */
+}
+
+/* =============================================
+   6. MEDIA QUERIES (RESPONSIVIDADE)
+   ============================================= */
+@media (min-width: 768px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    section {
+        padding: 6rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+        text-align: left;
+    }
+
+    .about-image img {
+        margin: 0;
+    }
+    
+    .grid-projetos {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .grid-habilidades {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .social-media {
+        gap: 3rem;
+    }
 }
