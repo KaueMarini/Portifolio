@@ -1,19 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="no-js">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Kauê Marini | Desenvolvedor Front-end</title>
+    <title>Kauê Marini | Desenvolvedor Web</title>
+
     <meta name="description" content="Portfólio de Kauê Marini, um desenvolvedor front-end apaixonado por criar interfaces e experiências digitais incríveis.">
     <meta name="author" content="Kauê Marini">
-    <meta name="keywords" content="Desenvolvedor, Front-end, UI/UX, Web, Portfolio, Kauê Marini">
-
-    <meta property="og:title" content="Kauê Marini | Desenvolvedor Front-end">
-    <meta property="og:description" content="Portfólio de Kauê Marini, desenvolvedor front-end apaixonado por UI/UX e tecnologia.">
-    <meta property="og:image" content="assets/images/sua-foto.jpg">
-    <meta property="og:url" content="https://seusite.com">
-    <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,33 +20,39 @@
 </head>
 <body>
 
-    <header class="header">
-        <nav class="container nav">
+    <div class="background-blurs">
+        <div class="blur-1"></div>
+        <div class="blur-2"></div>
+        <div class="blur-3"></div>
+    </div>
+
+    <header>
+        <nav class="container">
             <a href="#inicio" class="logo">KM.</a>
-            <ul class="nav-menu">
-                <li><a href="#inicio" class="nav-link">Início</a></li>
-                <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                <li><a href="#projetos" class="nav-link">Projetos</a></li>
-                <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
-                <li><a href="#contato" class="nav-link">Contato</a></li>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="inicio" class="hero">
-            <div class="container hero-content">
+        <section id="inicio">
+            <div class="container">
                 <h1>Olá, eu sou <span>Kauê Marini.</span></h1>
                 <p>Desenvolvedor Front-end | Apaixonado por UI/UX e Tecnologia</p>
             </div>
         </section>
 
-        <section id="sobre" class="about section-hidden">
+        <section id="sobre" class="hidden">
             <div class="container about-container">
-                <div class="about-image">
-                    <img src="assets/images/sua-foto.jpg" alt="Foto de perfil de Kauê Marini, sorrindo.">
+                <div>
+                    <img src="assets/images/sua-foto.jpg" alt="Foto de Kauê Marini">
                 </div>
-                <div class="about-text">
+                <div>
                     <h2>Sobre Mim</h2>
                     <p>
                         Sou um profissional dedicado e criativo com experiência em desenvolvimento de interfaces web. Tenho paixão por resolver problemas complexos e criar soluções elegantes, intuitivas e eficientes que proporcionem uma ótima experiência ao usuário.
@@ -65,29 +64,29 @@
             </div>
         </section>
 
-        <section id="projetos" class="projects section-hidden">
+        <section id="projetos" class="hidden">
             <div class="container">
                 <h2>Meus Projetos</h2>
                 <div class="grid-projetos">
-                    <div class="projeto-card section-hidden">
-                        <img src="assets/images/projeto1.jpg" alt="Preview do Nome do Projeto 1">
+                    <div class="projeto-card hidden tilt-card">
+                        <img src="assets/images/projeto1.jpg" alt="Nome do Projeto 1">
                         <div class="projeto-info">
                             <h3>Nome do Projeto 1</h3>
                             <p>Uma breve descrição do projeto, as tecnologias utilizadas e o seu papel.</p>
                             <div class="projeto-links">
-                                <a href="#" target="_blank" rel="noopener noreferrer">Ver Site</a>
-                                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                <a href="#" target="_blank">Ver Site</a>
+                                <a href="#" target="_blank">GitHub</a>
                             </div>
                         </div>
                     </div>
-                    <div class="projeto-card section-hidden">
-                        <img src="assets/images/projeto2.jpg" alt="Preview do Nome do Projeto 2">
+                    <div class="projeto-card hidden tilt-card">
+                        <img src="assets/images/projeto2.jpg" alt="Nome do Projeto 2">
                         <div class="projeto-info">
                             <h3>Nome do Projeto 2</h3>
                             <p>Uma breve descrição do projeto, as tecnologias utilizadas e o seu papel.</p>
                             <div class="projeto-links">
-                                <a href="#" target="_blank" rel="noopener noreferrer">Ver Site</a>
-                                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                <a href="#" target="_blank">Ver Site</a>
+                                <a href="#" target="_blank">GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -95,39 +94,39 @@
             </div>
         </section>
 
-        <section id="habilidades" class="skills section-hidden">
+        <section id="habilidades" class="hidden">
             <div class="container">
                 <h2>Minhas Habilidades</h2>
                 <div class="grid-habilidades">
-                    <div class="habilidade-card section-hidden">HTML5</div>
-                    <div class="habilidade-card section-hidden">CSS3 & Sass</div>
-                    <div class="habilidade-card section-hidden">JavaScript</div>
-                    <div class="habilidade-card section-hidden">React</div>
-                    <div class="habilidade-card section-hidden">Git & GitHub</div>
-                    <div class="habilidade-card section-hidden">Design UI/UX</div>
+                    <div class="habilidade-card hidden">HTML5</div>
+                    <div class="habilidade-card hidden">CSS3 & Sass</div>
+                    <div class="habilidade-card hidden">JavaScript</div>
+                    <div class="habilidade-card hidden">React</div>
+                    <div class="habilidade-card hidden">Git & GitHub</div>
+                    <div class="habilidade-card hidden">Design UI/UX</div>
                 </div>
             </div>
         </section>
 
-        <section id="contato" class="contact section-hidden">
+        <section id="contato" class="hidden">
             <div class="container">
                 <h2>Entre em Contato</h2>
-                <form action="https://formspree.io/f/SUA_URL_UNICA" method="POST" class="contact-form">
+                <form action="https://formspree.io/f/SUA_URL_UNICA" method="POST">
                     <input type="text" name="nome" placeholder="Seu Nome" required>
                     <input type="email" name="email" placeholder="Seu E-mail" required>
                     <textarea name="mensagem" rows="5" placeholder="Sua Mensagem" required></textarea>
-                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                    <button type="submit">Enviar Mensagem</button>
                 </form>
-                <div class="social-media">
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visitar meu perfil no LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visitar meu perfil no GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visitar meu perfil no Instagram"><i class="fab fa-instagram"></i></a>
+                <div class="redes-sociais">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
+    <footer>
         <div class="container">
             <p>&copy; 2025 Kauê Marini. Todos os direitos reservados.</p>
         </div>
