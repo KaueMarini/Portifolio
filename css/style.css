@@ -1,6 +1,4 @@
-/* =============================================
-   1. VARIÁVEIS GLOBAIS E RESET
-   ============================================= */
+
 :root {
     --cor-fundo: #020211;
     --cor-vidro: rgba(10, 8, 38, 0.4);
@@ -23,7 +21,7 @@
     scroll-behavior: smooth;
 }
 
-/* Esconde o cursor padrão */
+
 body, a, button {
     cursor: none;
 }
@@ -54,11 +52,7 @@ section {
     z-index: 1;
 }
 
-/* =============================================
-   2. EFEITOS ESPECIAIS
-   ============================================= */
 
-/* --- 2.1 CURSOR PERSONALIZADO --- */
 .custom-cursor {
     width: 20px;
     height: 20px;
@@ -79,7 +73,7 @@ section {
     border-color: transparent;
 }
 
-/* --- 2.2 FUNDO DE PARTÍCULAS --- */
+
 #particles-bg {
     position: fixed;
     top: 0;
@@ -89,7 +83,7 @@ section {
     z-index: 0;
 }
 
-/* --- 2.3 ESTILO "GLASSMORPHISM" --- */
+
 .glass-effect,
 header,
 .projeto-card,
@@ -104,9 +98,7 @@ footer {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* =============================================
-   3. CABEÇALHO E NAVEGAÇÃO
-   ============================================= */
+
 header {
     position: fixed;
     width: 100%;
@@ -151,9 +143,7 @@ nav a:hover, nav a.active {
     color: var(--cor-texto);
 }
 
-/* =============================================
-   4. SEÇÃO DO TERMINAL
-   ============================================= */
+
 .terminal-window {
     border-radius: 8px;
     max-width: 700px;
@@ -234,9 +224,7 @@ nav a:hover, nav a.active {
     outline: none;
 }
 
-/* =============================================
-   5. ESTILOS DAS SEÇÕES
-   ============================================= */
+
 
 /* Início */
 #inicio {
@@ -388,7 +376,7 @@ h2 {
     transform: scale(1.2);
 }
 
-/* Rodapé */
+
 footer {
     border-top: 1px solid var(--cor-borda-vidro);
 }

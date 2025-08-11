@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // =================================================================
-    // UPGRADE 1: CURSOR MAGNÉTICO
-    // =================================================================
     const initMagneticCursor = () => {
         const cursor = document.querySelector('.custom-cursor');
         if (!cursor) return;
@@ -24,9 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // =================================================================
-    // UPGRADE 2: ANIMAÇÃO DE TEXTO "SCRAMBLE"
-    // =================================================================
+   
     class TextScramble {
         constructor(el) {
             this.el = el;
@@ -93,9 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrambleElements.forEach(el => observer.observe(el));
     };
     
-    // =================================================================
-    // UPGRADE 3: FUNDO DE PARTÍCULAS INTERATIVO
-    // =================================================================
+    
     const initParticleBg = () => {
         const canvas = document.getElementById('particles-bg');
         if (!canvas) return;
@@ -171,16 +164,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // =================================================================
-    // UPGRADE 4: TERMINAL INTERATIVO
-    // =================================================================
+    
     const initTerminal = () => {
         const terminalInput = document.getElementById('terminal-input');
         if (!terminalInput) return;
         const terminalContent = document.getElementById('terminal-content');
         const terminalBody = document.getElementById('terminal-body');
 
-        // ATUALIZE COM SEUS LINKS AQUI
+        
         const socialLinks = {
             github: 'https://github.com/kauemarini',
             linkedin: 'https://linkedin.com/in/seu-usuario'
@@ -237,8 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
         printToTerminal('Bem-vindo ao meu portfólio interativo! Digite <span class="command">help</span> para começar.');
     };
 
-
-    // INICIALIZA TODAS AS FUNCIONALIDADES
     initMagneticCursor();
     initTextScramble();
     initParticleBg();
