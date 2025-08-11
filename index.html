@@ -4,37 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kauê Marini | Desenvolvedor Web</title>
-
     <meta name="description" content="Portfólio de Kauê Marini, um desenvolvedor front-end apaixonado por criar interfaces e experiências digitais incríveis.">
     <meta name="author" content="Kauê Marini">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/SEU-CODIGO-AQUI.js" crossorigin="anonymous" defer></script>
     
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
-
 </head>
 <body>
 
-    <div class="background-blurs">
-        <div class="blur-1"></div>
-        <div class="blur-2"></div>
-        <div class="blur-3"></div>
-    </div>
+    <div class="custom-cursor"></div>
 
+    <canvas id="particles-bg"></canvas>
     <header>
         <nav class="container">
-            <a href="#inicio" class="logo">KM.</a>
+            <a href="#inicio" class="logo magnetic">KM.</a>
             <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#inicio" class="magnetic">Início</a></li>
+                <li><a href="#sobre" class="magnetic">Sobre</a></li>
+                <li><a href="#projetos" class="magnetic">Projetos</a></li>
+                <li><a href="#habilidades" class="magnetic">Habilidades</a></li>
+                <li><a href="#contato" class="magnetic">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -42,23 +37,41 @@
     <main>
         <section id="inicio">
             <div class="container">
-                <h1>Olá, eu sou <span>Kauê Marini.</span></h1>
-                <p>Desenvolvedor Front-end | Apaixonado por UI/UX e Tecnologia</p>
+                <h1 data-scramble>Olá, eu sou <span>Kauê Marini.</span></h1>
+                <p data-scramble>Desenvolvedor Front-end | Apaixonado por UI/UX e Tecnologia</p>
             </div>
         </section>
 
+        <section id="terminal" class="hidden">
+            <div class="container">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="terminal-title">bash</div>
+                    </div>
+                    <div id="terminal-body" class="terminal-body">
+                        <div id="terminal-content"></div>
+                        <div class="terminal-prompt">
+                            <span class="prompt-user">kauemarini@portfolio:~$</span>
+                            <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="sobre" class="hidden">
             <div class="container about-container">
                 <div>
-                    <img src="assets/images/sua-foto.jpg" alt="Foto de Kauê Marini">
+                    <img src="assets/images/sua-foto.jpg" alt="Foto de Kauê Marini" class="magnetic">
                 </div>
                 <div>
-                    <h2>Sobre Mim</h2>
+                    <h2 data-scramble>Sobre Mim</h2>
                     <p>
                         Sou um profissional dedicado e criativo com experiência em desenvolvimento de interfaces web. Tenho paixão por resolver problemas complexos e criar soluções elegantes, intuitivas e eficientes que proporcionem uma ótima experiência ao usuário.
-                    </p>
-                    <p>
-                        No meu tempo livre, gosto de explorar novas tecnologias, contribuir para projetos de código aberto e me aprofundar no mundo do design de interação.
                     </p>
                 </div>
             </div>
@@ -66,37 +79,37 @@
 
         <section id="projetos" class="hidden">
             <div class="container">
-                <h2>Meus Projetos</h2>
+                <h2 data-scramble>Meus Projetos</h2>
                 <div class="grid-projetos">
-                    <div class="projeto-card hidden tilt-card">
+                    <div class="projeto-card hidden">
                         <img src="assets/images/projeto1.jpg" alt="Nome do Projeto 1">
                         <div class="projeto-info">
                             <h3>Nome do Projeto 1</h3>
                             <p>Uma breve descrição do projeto, as tecnologias utilizadas e o seu papel.</p>
                             <div class="projeto-links">
-                                <a href="#" target="_blank">Ver Site</a>
-                                <a href="#" target="_blank">GitHub</a>
+                                <a href="#" target="_blank" class="magnetic">Ver Site</a>
+                                <a href="#" target="_blank" class="magnetic">GitHub</a>
                             </div>
                         </div>
                     </div>
-                    <div class="projeto-card hidden tilt-card">
+                    <div class="projeto-card hidden">
                         <img src="assets/images/projeto2.jpg" alt="Nome do Projeto 2">
                         <div class="projeto-info">
                             <h3>Nome do Projeto 2</h3>
                             <p>Uma breve descrição do projeto, as tecnologias utilizadas e o seu papel.</p>
                             <div class="projeto-links">
-                                <a href="#" target="_blank">Ver Site</a>
-                                <a href="#" target="_blank">GitHub</a>
+                                <a href="#" target="_blank" class="magnetic">Ver Site</a>
+                                <a href="#" target="_blank" class="magnetic">GitHub</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <section id="habilidades" class="hidden">
             <div class="container">
-                <h2>Minhas Habilidades</h2>
+                <h2 data-scramble>Minhas Habilidades</h2>
                 <div class="grid-habilidades">
                     <div class="habilidade-card hidden">HTML5</div>
                     <div class="habilidade-card hidden">CSS3 & Sass</div>
@@ -110,17 +123,17 @@
 
         <section id="contato" class="hidden">
             <div class="container">
-                <h2>Entre em Contato</h2>
-                <form action="https://formspree.io/f/SUA_URL_UNICA" method="POST">
+                <h2 data-scramble>Entre em Contato</h2>
+                <form action="https://formspree.io/f/SUA_URL_UNICA" method="POST" class="contact-form">
                     <input type="text" name="nome" placeholder="Seu Nome" required>
                     <input type="email" name="email" placeholder="Seu E-mail" required>
                     <textarea name="mensagem" rows="5" placeholder="Sua Mensagem" required></textarea>
-                    <button type="submit">Enviar Mensagem</button>
+                    <button type="submit" class="magnetic">Enviar Mensagem</button>
                 </form>
                 <div class="redes-sociais">
-                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" class="magnetic"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank" class="magnetic"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" class="magnetic"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </section>
