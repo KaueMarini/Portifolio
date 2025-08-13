@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const socialLinks = {
             github: 'https://github.com/kauemarini',
-            linkedin: 'https://linkedin.com/in/seu-usuario'
+            linkedin: 'https://linkedin.com/in/kauêmarini'
         };
 
         const commands = {
