@@ -28,6 +28,6 @@ Bora trocar uma ideia?
 Se curtiu, se tem alguma sugestão, ou só quer falar sobre código e tecnologia, me encontra lá no LinkedIn. Adoraria me conectar com você!
 
 LinkedIn: www.linkedin.com/in/kauêmarini
-Link Do Portifolio: kauemarini.github.io/Portifolio/)
+Link Do Portifolio: https://kauemarini.github.io/Portifolio/
 
 Abraço! 👋
