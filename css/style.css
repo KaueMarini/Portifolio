@@ -263,7 +263,7 @@ h2 {
 /* Sobre */
 .about-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 0fr 2fr;
     gap: 3rem;
     align-items: center;
 }
@@ -278,11 +278,11 @@ h2 {
 /* Projetos */
 .grid-projetos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 }
 .projeto-card {
-    border-radius: 16px;
+    border-radius: 50px;
     overflow: hidden;
     transition: transform 0.3s;
 }
