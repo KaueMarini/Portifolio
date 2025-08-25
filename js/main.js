@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const initMagneticCursor = () => {
-        const cursor = document.querySelector('.custom-cursor');
-        if (!cursor) return;
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
 
+    const initMagneticCursor = () => {
+        if (!isDesktop) return;
+
+        const cursor = document.querySelector('.custom-cursor');
         const magneticElements = document.querySelectorAll('.magnetic');
 
         document.addEventListener('mousemove', (e) => {
@@ -21,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-   
     class TextScramble {
         constructor(el) {
             this.el = el;
@@ -88,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         scrambleElements.forEach(el => observer.observe(el));
     };
     
-    
     const initParticleBg = () => {
         const canvas = document.getElementById('particles-bg');
         if (!canvas) return;
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let dx = mouse.x - this.x;
                 let dy = mouse.y - this.y;
                 let distance = Math.sqrt(dx*dx + dy*dy);
-                if (distance < mouse.radius + this.size){
+                if (isDesktop && distance < mouse.radius + this.size){
                     if(mouse.x < this.x && this.x < canvas.width - this.size * 10) { this.x += 3; }
                     if(mouse.x > this.x && this.x > this.size * 10) { this.x -= 3; }
                     if(mouse.y < this.y && this.y < canvas.height - this.size * 10) { this.y += 3; }
@@ -163,28 +163,38 @@ document.addEventListener('DOMContentLoaded', () => {
             initParticles();
         });
     };
-
     
-    const initTerminal = () => {
+    const initInteractiveTerminal = () => {
+        const terminalWindow = document.getElementById('terminal-window');
         const terminalInput = document.getElementById('terminal-input');
-        if (!terminalInput) return;
         const terminalContent = document.getElementById('terminal-content');
         const terminalBody = document.getElementById('terminal-body');
-
         
+        if (!terminalInput) return;
+
+        terminalWindow.addEventListener('click', (e) => {
+            if (e.target !== terminalInput) {
+                terminalInput.focus();
+            }
+        });
+
         const socialLinks = {
             github: 'https://github.com/kauemarini',
             linkedin: 'https://linkedin.com/in/kauêmarini'
         };
+        
+        const helpText = `Comandos disponíveis:
+<div class="help-grid">
+    <span class="help-command">sobre</span><span class="help-description">- Navega para a seção Sobre Mim</span>
+    <span class="help-command">projetos</span><span class="help-description">- Navega para a seção de Projetos</span>
+    <span class="help-command">habilidades</span><span class="help-description">- Navega para a seção de Habilidades</span>
+    <span class="help-command">contato</span><span class="help-description">- Navega para a seção de Contato</span>
+    <span class="help-command">social</span><span class="help-description">- Exibe os links das redes sociais</span>
+    <span class="help-command">clear</span><span class="help-description">- Limpa a tela do terminal</span>
+</div>`;
 
         const commands = {
-            'help': `Comandos disponíveis: <br>
-                     <span class="command">sobre</span> - Desce para a seção Sobre Mim<br>
-                     <span class="command">projetos</span> - Desce para a seção Meus Projetos<br>
-                     <span class="command">habilidades</span> - Desce para a seção Habilidades<br>
-                     <span class="command">contato</span> - Desce para a seção Contato<br>
-                     <span class="command">social</span> - Exibe meus links de redes sociais<br>
-                     <span class="command">clear</span> - Limpa o terminal`,
+            'help': helpText,
             'sobre': 'Navegando para a seção Sobre...',
             'projetos': 'Navegando para a seção Projetos...',
             'habilidades': 'Navegando para a seção Habilidades...',
@@ -196,7 +206,10 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const printToTerminal = (text) => {
-            terminalContent.innerHTML += `<div class="terminal-output">${text}</div>`;
+            const outputElement = document.createElement('div');
+            outputElement.classList.add('terminal-output');
+            outputElement.innerHTML = text;
+            terminalContent.appendChild(outputElement);
             terminalBody.scrollTop = terminalBody.scrollHeight;
         };
 
@@ -213,24 +226,55 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         printToTerminal(commands[command]);
                         if (['sobre', 'projetos', 'habilidades', 'contato'].includes(command)) {
-                            const section = document.getElementById(command);
-                            if(section) section.scrollIntoView({ behavior: 'smooth' });
+                            document.getElementById(command).scrollIntoView({ behavior: 'smooth' });
                         }
                     }
                 } else {
                     printToTerminal(`Comando não encontrado: ${command}. Digite 'help' para ver a lista de comandos.`);
                 }
-                
                 terminalInput.value = '';
             }
         });
 
         printToTerminal('Bem-vindo ao meu portfólio interativo! Digite <span class="command">help</span> para começar.');
     };
+    
+    const initMobileMenu = () => {
+        const menuIcon = document.querySelector('.menu-mobile-icon');
+        const mobileNav = document.querySelector('.nav-mobile-overlay');
+        const navLinks = mobileNav.querySelectorAll('a');
 
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuIcon.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+    };
+
+    const showTerminal = () => {
+        const terminalSection = document.getElementById('terminal');
+        const terminalInput = document.getElementById('terminal-input');
+        if (terminalSection && terminalInput) {
+            setTimeout(() => {
+                terminalSection.classList.add('visible');
+                terminalInput.focus();
+            }, 1500);
+        }
+    };
+
+    // Inicializa todas as funções
     initMagneticCursor();
     initTextScramble();
     initParticleBg();
-    initTerminal();
+    initInteractiveTerminal();
+    initMobileMenu();
+    showTerminal();
 });
-//teste commit 1

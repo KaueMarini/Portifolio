@@ -10,8 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-    <script src="https://kit.fontawesome.com" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
@@ -21,30 +20,46 @@
     <div class="custom-cursor"></div>
 
     <canvas id="particles-bg"></canvas>
+    
     <header>
         <nav class="container">
             <a href="#inicio" class="logo magnetic">KM</a>
-            <ul>
-                <li><a href="#inicio" class="magnetic">Início</a></li>
-                <li><a href="#sobre" class="magnetic">Sobre</a></li>
-                <li><a href="#projetos" class="magnetic">Projetos</a></li>
-                <li><a href="#habilidades" class="magnetic">Habilidades</a></li>
-                <li><a href="#contato" class="magnetic">Contato</a></li>
-            </ul>
+            <div class="nav-desktop">
+                <ul>
+                    <li><a href="#inicio" class="magnetic">Início</a></li>
+                    <li><a href="#sobre" class="magnetic">Sobre</a></li>
+                    <li><a href="#projetos" class="magnetic">Projetos</a></li>
+                    <li><a href="#habilidades" class="magnetic">Habilidades</a></li>
+                    <li><a href="#contato" class="magnetic">Contato</a></li>
+                </ul>
+            </div>
+            <div class="menu-mobile-icon">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
         </nav>
     </header>
+
+    <div class="nav-mobile-overlay">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contato">Contato</a>
+    </div>
 
     <main>
         <section id="inicio">
             <div class="container">
                 <h1 data-scramble>Olá, eu sou <span>Kauê Marini.</span></h1>
-                <p data-scramble>Desenvolvedor Full Stack </p>
+                <p data-scramble>Desenvolvedor Full Stack</p>
             </div>
         </section>
 
-        <section id="terminal" class="hidden">
+        <section id="terminal">
             <div class="container">
-                <div class="terminal-window">
+                <div id="terminal-window" class="terminal-window">
                     <div class="terminal-header">
                         <div class="terminal-buttons">
                             <span class="dot red"></span>
@@ -57,98 +72,87 @@
                         <div id="terminal-content"></div>
                         <div class="terminal-prompt">
                             <span class="prompt-user">kauemarini@portfolio:~$</span>
-                            <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" autofocus>
+                            <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="sobre" class="hidden">
+        
+        <section id="sobre">
             <div class="container about-container">
-                <div>
+                <div class="about-image">
                     <img src="assets/images/image1.jpg" alt="Foto de Kauê Marini" class="magnetic">
                 </div>
-                <div>
+                <div class="about-text">
                     <h2 data-scramble>Sobre Mim</h2>
                     <p>
-                        Sou estudante de Sistemas de Informação e atuo como desenvolvedor Full Stack, criando soluções web completas. Meu foco principal é desenvolver projetos que automatizam e melhoram a gestão de processos para empresas.
-                        <br>
-                        <br>
-                        Tenho experiência em tecnologias como Python, JavaScript, C#, NodeJS e MySQL. Já trabalhei em empresas como a Fly Comunicação e a TAKEOFF, e hoje também atendo meus próprios clientes como freelancer.
-                        <br>
-                        <br>
-                        Como freelancer, crio sistemas personalizados para negócios de diversas áreas, como clínicas, empresas de finanças e agências de marketing. Também participei de um hackathon da Kafnet, um desafio de programação em um dos maiores eventos de tecnologia do país.
-
+                        Sou estudante de Sistemas de Informação, com experiência como desenvolvedor Full Stack e participação em projetos web. Atuei em empresas como a Fly Comunicação e a TAKEOFF, além de realizar projetos como freelancer. Tenho conhecimentos práticos em Python, JavaScript, HTML, CSS, C#, MySQL, NodeJS, JSON, plataformas Low-Code e integração de sistemas. Também tenho familiaridade com ferramentas de versionamento, como o Git. Além das empresas por onde passei, atualmente atuo como freelancer, desenvolvendo projetos personalizados para diversos setores, como clínicas odontológicas, clínicas estéticas, sites de apostas, empresas de finanças e agências de marketing sempre com foco em automação e gestão de processos. Além disso, participei de um hackathon promovido pela Kafnet, em parceria com a Zoho Creator, durante um dos maiores eventos de tecnologia do país.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section id="projetos" class="hidden">
+        <section id="projetos">
             <div class="container">
                 <h2 data-scramble>Meus Projetos</h2>
                 <div class="grid-projetos">
-                    <div class="projeto-card hidden">
-                        <img src="assets/images/nexus.jpg" alt="Nome do Projeto 1">
+                    <div class="projeto-card">
+                        <img src="assets/images/nexus.jpg" alt="Projeto Nexus Gestor">
                         <div class="projeto-info">
                             <h3>Nexus Gestor – Hackathon Kafnet + Zoho</h3>
-                            <p>Um sistema completo para controle de estoque, registro de vendas e gestão de produtos, com foco em usabilidade, automação de processos e escalabilidade. Tudo isso usando a plataforma Zoho Creator e a linguagem Deluge.</p>
+                            <p>Um sistema completo para controle de estoque, registro de vendas e gestão de produtos, com foco em usabilidade, automação de processos e escalabilidade.</p>
                             <div class="projeto-links">
-                                <br>
-                                <br>
                                 <a href="https://drive.google.com/file/d/1618fiMx1UezRjLdEaRKtEhEx3ZZ3Fjik/view?usp=sharing" target="_blank" class="magnetic">Ver Site</a>
-                                
                             </div>
                         </div>
                     </div>
-                    <div class="projeto-card hidden">
-                        <img src="assets/images/clinflow.png" alt="Nome do Projeto 2">
+                    <div class="projeto-card">
+                        <img src="assets/images/clinflow.png" alt="Projeto CliniFlow">
                         <div class="projeto-info">
                             <h3>CliniFlow</h3>
-                            <p>Tive o prazer de desenvolver este projeto completo que une gestão, automação de processos e análise de dados para clínicas. O CliniFlow foi pensado para resolver dores reais do dia a dia. Toda a solução foi construída com Python + Streamlit + Google Sheets, com interface personalizada e foco em usuabilidade e resultado prático</p>
+                            <p>Projeto completo que une gestão, automação e análise de dados para clínicas, construído com Python + Streamlit + Google Sheets para resolver dores reais do dia a dia.</p>
                             <div class="projeto-links">
-                                <br>
-                                <br>
                                 <a href="https://clinflow.streamlit.app/" target="_blank" class="magnetic">Ver Site</a>
                                 <a href="https://github.com/KaueMarini/ClinFlow" target="_blank" class="magnetic">GitHub</a>
                             </div>
                         </div>
                     </div>
-                    <div class="projeto-card hidden">
-                        <img src="assets/images/Code.png" alt="Nome do Projeto 3">
+                    <div class="projeto-card">
+                        <img src="assets/images/Code.png" alt="Projeto Code-Mentor IA">
                         <div class="projeto-info">
                             <h3>Code-Mentor IA</h3>
-                            <p>O Code-Mentor IA é seu assistente de programação pessoal, uma aplicação Full Stack de ponta que utiliza o poder da inteligência artificial generativa. Projetado para desenvolvedores que buscam a excelência, o Code-Mentor IA não apenas corrige erros, mas ensina você a pensar como um arquiteto de software sênior. Submeta seu código em Python, JavaScript e outras linguagens, e receba em segundos uma análise profunda</p>
+                            <p>Aplicação Full Stack que utiliza IA generativa para analisar e corrigir códigos em Python, JavaScript e outras linguagens, ensinando práticas de um arquiteto de software sênior.</p>
                             <div class="projeto-links">
-                                <br>
-                                <br>
                                 <a href="https://github.com/KaueMarini/Code-Mentor-IA.git" target="_blank" class="magnetic">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         
-        <section id="habilidades" class="hidden">
+        <section id="habilidades">
             <div class="container">
                 <h2 data-scramble>Minhas Habilidades</h2>
                 <div class="grid-habilidades">
-                    <div class="habilidade-card hidden">HTML</div>
-                    <div class="habilidade-card hidden">CSS3 & Sass</div>
-                    <div class="habilidade-card hidden">JavaScript</div>
-                    <div class="habilidade-card hidden">Python</div>
-                    <div class="habilidade-card hidden">TypeScript</div>
-                    <div class="habilidade-card hidden">MySQL</div>
-                    <div class="habilidade-card hidden">React</div>
-                    <div class="habilidade-card hidden">Git & GitHub</div>
-                    <div class="habilidade-card hidden">Design UI/UX</div>
-                    <div class="habilidade-card hidden">Kotlin</div>
-                    <div class="habilidade-card hidden">C#</div>
-                    <div class="habilidade-card hidden">NodeJS</div>
-                    <div class="habilidade-card hidden">n8n</div>
+                    <div class="habilidade-card">HTML</div>
+                    <div class="habilidade-card">CSS3 & Sass</div>
+                    <div class="habilidade-card">JavaScript</div>
+                    <div class="habilidade-card">Python</div>
+                    <div class="habilidade-card">TypeScript</div>
+                    <div class="habilidade-card">MySQL</div>
+                    <div class="habilidade-card">React</div>
+                    <div class="habilidade-card">Git & GitHub</div>
+                    <div class="habilidade-card">Design UI/UX</div>
+                    <div class="habilidade-card">Kotlin</div>
+                    <div class="habilidade-card">C#</div>
+                    <div class="habilidade-card">NodeJS</div>
                 </div>
             </div>
         </section>
 
-        <section id="contato" class="hidden">
+        <section id="contato">
             <div class="container">
                 <h2 data-scramble>Entre em Contato</h2>
                 <form action="https://formspree.io/f/mwpqyjeb" method="POST" class="contact-form">
