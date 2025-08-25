@@ -179,10 +179,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const commands = {
             'help': `Comandos disponíveis: <br>
-                     <span class="command">sobre</span> - Rola para a seção Sobre Mim<br>
-                     <span class="command">projetos</span> - Rola para a seção Meus Projetos<br>
-                     <span class="command">habilidades</span> - Rola para a seção Habilidades<br>
-                     <span class="command">contato</span> - Rola para a seção Contato<br>
+                     <span class="command">sobre</span> - Desce para a seção Sobre Mim<br>
+                     <span class="command">projetos</span> - Desce para a seção Meus Projetos<br>
+                     <span class="command">habilidades</span> - Desce para a seção Habilidades<br>
+                     <span class="command">contato</span> - Desce para a seção Contato<br>
                      <span class="command">social</span> - Exibe meus links de redes sociais<br>
                      <span class="command">clear</span> - Limpa o terminal`,
             'sobre': 'Navegando para a seção Sobre...',
