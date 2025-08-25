@@ -266,11 +266,10 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 terminalSection.classList.add('visible');
                 terminalInput.focus();
-            }, 1500);
+            }, 100);
         }
     };
 
-    // Inicializa todas as funções
     initMagneticCursor();
     initTextScramble();
     initParticleBg();
