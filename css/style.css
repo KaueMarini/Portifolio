@@ -216,12 +216,62 @@ h2 {
     transition: transform 0.3s;
     border: 1px solid var(--cor-borda-vidro);
     background: var(--cor-vidro);
+    display: flex;
+    flex-direction: column;
 }
 
-.projeto-card img {
+.projeto-slideshow {
+    position: relative;
     width: 100%;
     height: 200px;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.projeto-imagem {
+    min-width: 100%;
+    height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+}
+
+.projeto-imagem.active {
+    opacity: 1;
+}
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.projeto-slideshow:hover .slide-btn {
+    opacity: 1;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
 }
 
 .projeto-info {
@@ -508,4 +558,50 @@ h2 {
     .grid-projetos {
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
+    
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.language-switcher button {
+    background: none;
+    border: 1px solid var(--cor-borda-vidro);
+    color: var(--cor-texto-secundario);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--fonte-mono);
+    transition: all 0.3s ease;
+}
+
+.language-switcher button:hover {
+    background-color: var(--cor-vidro);
+    color: var(--cor-texto);
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+@media (max-width: 767px) {
+    .nav-links-container {
+       
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-mobile-icon {
+        display: none;
+    }
+    .nav-desktop {
+        display: block;
+    }
+}
 }

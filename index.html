@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kauê Nebot Marini | Desenvolvedor Full Stack</title>
-    <meta name="description" content="Portfólio de Kauê Marini, um desenvolvedor full stack apaixonado por criar interfaces.">
+    <title data-pt="Kauê Nebot Marini | Desenvolvedor Full Stack" data-en="Kauê Nebot Marini | Full Stack Developer">Kauê Nebot Marini | Desenvolvedor Full Stack</title>
+    <meta name="description" data-pt="Portfólio de Kauê Marini, um desenvolvedor full stack apaixonado por criar interfaces." data-en="Portfolio of Kauê Marini, a full stack developer passionate about creating interfaces.">
     <meta name="author" content="Kauê Nebot Marini">
     <link rel="icon" type="image/png" href="assets/images/km1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,20 +18,24 @@
 <body>
 
     <div class="custom-cursor"></div>
-
     <canvas id="particles-bg"></canvas>
     
     <header>
         <nav class="container">
             <a href="#inicio" class="logo magnetic">KM</a>
-            <div class="nav-desktop">
-                <ul>
-                    <li><a href="#inicio" class="magnetic">Início</a></li>
-                    <li><a href="#sobre" class="magnetic">Sobre</a></li>
-                    <li><a href="#projetos" class="magnetic">Projetos</a></li>
-                    <li><a href="#habilidades" class="magnetic">Habilidades</a></li>
-                    <li><a href="#contato" class="magnetic">Contato</a></li>
-                </ul>
+            <div class="nav-links-container">
+                <div class="nav-desktop">
+                    <ul>
+                        <li><a href="#inicio" class="magnetic" data-pt="Início" data-en="Home">Início</a></li>
+                        <li><a href="#sobre" class="magnetic" data-pt="Sobre" data-en="About">Sobre</a></li>
+                        <li><a href="#projetos" class="magnetic" data-pt="Projetos" data-en="Projects">Projetos</a></li>
+                        <li><a href="#habilidades" class="magnetic" data-pt="Habilidades" data-en="Skills">Habilidades</a></li>
+                        <li><a href="#contato" class="magnetic" data-pt="Contato" data-en="Contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="language-switcher">
+                    <button id="lang-btn" class="magnetic">EN/PT</button>
+                </div>
             </div>
             <div class="menu-mobile-icon">
                 <div class="bar1"></div>
@@ -42,18 +46,18 @@
     </header>
 
     <div class="nav-mobile-overlay">
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#contato">Contato</a>
+        <a href="#inicio" data-pt="Início" data-en="Home">Início</a>
+        <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
+        <a href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a>
+        <a href="#habilidades" data-pt="Habilidades" data-en="Skills">Habilidades</a>
+        <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
     </div>
 
     <main>
         <section id="inicio">
             <div class="container">
-                <h1 data-scramble>Olá, eu sou <span>Kauê Marini.</span></h1>
-                <p data-scramble>Desenvolvedor Full Stack</p>
+                <h1 data-scramble data-pt="Olá, eu sou <span>Kauê Marini.</span>" data-en="Hello, I'm <span>Kauê Marini.</span>">Olá, eu sou <span>Kauê Marini.</span></h1>
+                <p data-scramble data-pt="Desenvolvedor Full Stack" data-en="Full Stack Developer">Desenvolvedor Full Stack</p>
             </div>
         </section>
 
@@ -85,14 +89,12 @@
                     <img src="assets/images/image1.jpg" alt="Foto de Kauê Marini" class="magnetic">
                 </div>
                 <div class="about-text">
-                    <h2 data-scramble>Sobre Mim</h2>
-                    <p>
+                    <h2 data-scramble data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h2>
+                    <p data-pt="Sou estudante de Sistemas de Informação e atuo como desenvolvedor Full Stack, criando soluções web completas. Meu foco principal é desenvolver projetos que automatizam e melhoram a gestão de processos para empresas.<br><br>Tenho experiência em tecnologias como Python, JavaScript, C#, NodeJS e MySQL. Já trabalhei em empresas como a Fly Comunicação e a TAKEOFF, e hoje também atendo meus próprios clientes como freelancer.<br><br>Como freelancer, crio sistemas personalizados para negócios de diversas áreas, como clínicas, empresas de finanças e agências de marketing. Também participei de um hackathon da Kafnet, um desafio de programação em um dos maiores eventos de tecnologia do país." data-en="I am an Information Systems student and work as a Full Stack developer, creating complete web solutions. My main focus is on developing projects that automate and improve process management for companies.<br><br>I have experience with technologies like Python, JavaScript, C#, NodeJS, and MySQL. I have worked for companies like Fly Comunicação and TAKEOFF, and today I also serve my own clients as a freelancer.<br><br>As a freelancer, I create custom systems for businesses in various fields, such as clinics, finance companies, and marketing agencies. I also participated in a Kafnet hackathon, a programming challenge at one of the largest technology events in the country.">
                         Sou estudante de Sistemas de Informação e atuo como desenvolvedor Full Stack, criando soluções web completas. Meu foco principal é desenvolver projetos que automatizam e melhoram a gestão de processos para empresas.
-                        <br>
-                        <br>
+                        <br><br>
                         Tenho experiência em tecnologias como Python, JavaScript, C#, NodeJS e MySQL. Já trabalhei em empresas como a Fly Comunicação e a TAKEOFF, e hoje também atendo meus próprios clientes como freelancer.
-                        <br>
-                        <br>
+                        <br><br>
                         Como freelancer, crio sistemas personalizados para negócios de diversas áreas, como clínicas, empresas de finanças e agências de marketing. Também participei de um hackathon da Kafnet, um desafio de programação em um dos maiores eventos de tecnologia do país.
                     </p>
                 </div>
@@ -101,37 +103,77 @@
 
         <section id="projetos">
             <div class="container">
-                <h2 data-scramble>Meus Projetos</h2>
+                <h2 data-scramble data-pt="Meus Projetos" data-en="My Projects">Meus Projetos</h2>
                 <div class="grid-projetos">
                     <div class="projeto-card">
-                        <img src="assets/images/nexus.jpg" alt="Projeto Nexus Gestor">
+                        <div class="projeto-slideshow">
+                            <div class="slideshow-container">
+                                <img src="assets/images/nexus.jpg" alt="Projeto Nexus Gestor 1" class="projeto-imagem active">
+                            </div>
+                            <button class="slide-btn prev-btn">&lt;</button>
+                            <button class="slide-btn next-btn">&gt;</button>
+                        </div>
                         <div class="projeto-info">
-                            <h3>Nexus Gestor – Hackathon Kafnet + Zoho</h3>
-                            <p>Um sistema completo para controle de estoque, registro de vendas e gestão de produtos, com foco em usabilidade, automação de processos e escalabilidade.</p>
+                            <h3 data-pt="Nexus Gestor – Hackathon Kafnet + Zoho" data-en="Nexus Manager – Hackathon Kafnet + Zoho">Nexus Gestor – Hackathon Kafnet + Zoho</h3>
+                            <p data-pt="Um sistema completo para controle de estoque, registro de vendas e gestão de produtos, com foco em usabilidade, automação de processos e escalabilidade." data-en="A complete system for inventory control, sales registration, and product management, focusing on usability, process automation, and scalability.">Um sistema completo para controle de estoque, registro de vendas e gestão de produtos, com foco em usabilidade, automação de processos e escalabilidade.</p>
                             <div class="projeto-links">
-                                <a href="https://drive.google.com/file/d/1618fiMx1UezRjLdEaRKtEhEx3ZZ3Fjik/view?usp=sharing" target="_blank" class="magnetic">Ver Site</a>
+                                <a href="https://drive.google.com/file/d/1618fiMx1UezRjLdEaRKtEhEx3ZZ3Fjik/view?usp=sharing" target="_blank" class="magnetic" data-pt="Ver Site" data-en="View Site">Ver Site</a>
                             </div>
                         </div>
                     </div>
+
                     <div class="projeto-card">
-                        <img src="assets/images/clinflow.png" alt="Projeto CliniFlow">
+                        <div class="projeto-slideshow">
+                            <div class="slideshow-container">
+                                <img src="assets/images/clinflow0.png" alt="Projeto CliniFlow 1" class="projeto-imagem active">
+                                <img src="assets/images/Clinflow.PNG" alt="Projeto CliniFlow 2" class="projeto-imagem">
+                                <img src="assets/images/clinflow 2.PNG" alt="Projeto CliniFlow 3" class="projeto-imagem">
+                                <img src="assets/images/clinflow 3.PNG" alt="Projeto CliniFlow 4" class="projeto-imagem">
+                                <img src="assets/images/clinflow 4.PNG" alt="Projeto CliniFlow 5" class="projeto-imagem">
+                            </div>
+                            <button class="slide-btn prev-btn">&lt;</button>
+                            <button class="slide-btn next-btn">&gt;</button>
+                        </div>
                         <div class="projeto-info">
-                            <h3>CliniFlow</h3>
-                            <p>Projeto completo que une gestão, automação e análise de dados para clínicas, construído com Python + Streamlit + Google Sheets para resolver dores reais do dia a dia.</p>
+                            <h3 data-pt="CliniFlow" data-en="CliniFlow">CliniFlow</h3>
+                            <p data-pt="Projeto completo que une gestão, automação e análise de dados para clínicas, construído com Python + Streamlit + Google Sheets para resolver dores reais do dia a dia." data-en="A complete project that combines management, automation, and data analysis for clinics, built with Python + Streamlit + Google Sheets to solve real day-to-day problems.">Projeto completo que une gestão, automação e análise de dados para clínicas, construído com Python + Streamlit + Google Sheets para resolver dores reais do dia a dia.</p>
                             <div class="projeto-links">
-                                <a href="https://clinflow.streamlit.app/" target="_blank" class="magnetic">Ver Site</a>
+                                <a href="https://clinflow.streamlit.app/" target="_blank" class="magnetic" data-pt="Ver Site" data-en="View Site">Ver Site</a>
                                 <a href="https://github.com/KaueMarini/ClinFlow" target="_blank" class="magnetic">GitHub</a>
                             </div>
                         </div>
                     </div>
+
                     <div class="projeto-card">
-                        <img src="assets/images/Code.png" alt="Projeto Code-Mentor IA">
+                        <div class="projeto-slideshow">
+                            <div class="slideshow-container">
+                                <img src="assets/images/Code.png" alt="Projeto Code-Mentor IA 1" class="projeto-imagem active">
+                                <img src="assets/images/code mentor 2.PNG " alt="Projeto Code-Mentor IA 2" class="projeto-imagem">
+                                <img src="assets/images/code mentor 3.PNG " alt="Projeto Code-Mentor IA 3" class="projeto-imagem">
+                            </div>
+                            <button class="slide-btn prev-btn">&lt;</button>
+                            <button class="slide-btn next-btn">&gt;</button>
+                        </div>
                         <div class="projeto-info">
-                            <h3>Code-Mentor IA</h3>
-                            <p>Aplicação Full Stack que utiliza IA generativa para analisar e corrigir códigos em Python, JavaScript e outras linguagens, ensinando práticas de um arquiteto de software sênior.</p>
+                            <h3 data-pt="Code-Mentor IA" data-en="Code-Mentor AI">Code-Mentor IA</h3>
+                            <p data-pt="Aplicação Full Stack que utiliza IA generativa para analisar e corrigir códigos em Python, JavaScript e outras linguagens, ensinando práticas de um arquiteto de software sênior." data-en="A Full Stack application that uses generative AI to analyze and correct code in Python, JavaScript, and other languages, teaching the practices of a senior software architect.">Aplicação Full Stack que utiliza IA generativa para analisar e corrigir códigos em Python, JavaScript e outras linguagens, ensinando práticas de um arquiteto de software sênior.</p>
                             <div class="projeto-links">
                                 <a href="https://github.com/KaueMarini/Code-Mentor-IA.git" target="_blank" class="magnetic">GitHub</a>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="projeto-card">
+                        <div class="projeto-slideshow">
+                            <div class="slideshow-container">
+                                <img src="assets/images/garry.PNG" alt="Imagem 1 do seu novo projeto" class="projeto-imagem active">
+                            </div>
+                            <button class="slide-btn prev-btn">&lt;</button>
+                            <button class="slide-btn next-btn">&gt;</button>
+                        </div>
+                        <div class="projeto-info">
+                            <h3 data-pt="Assistente IA para Clínicas" data-en="AI Assistant for Clinics">Assistente IA para Clínicas</h3>
+                            <p data-pt="Sistema de automação avançado, desenvolvido para otimizar o atendimento em clínicas odontológicas e de estética. Utilizando Inteligência Artificial e Processamento de Linguagem Natural (PLN), a ferramenta interage com os pacientes em linguagem humana para fornecer informações, tirar dúvidas e gerenciar agendamentos de forma totalmente autônoma." data-en="Advanced automation system developed to optimize service in dental and aesthetic clinics. Using Artificial Intelligence and Natural Language Processing (NLP), the tool interacts with patients in human language to provide information, answer questions, and manage appointments autonomously.">Sistema de automação avançado, desenvolvido para otimizar o atendimento em clínicas odontológicas e de estética...</p>
                         </div>
                     </div>
                 </div>
@@ -140,12 +182,14 @@
         
         <section id="habilidades">
             <div class="container">
-                <h2 data-scramble>Minhas Habilidades</h2>
+                <h2 data-scramble data-pt="Minhas Habilidades" data-en="My Skills">Minhas Habilidades</h2>
                 <div class="grid-habilidades">
-                    <div class="habilidade-card">HTML</div>
-                    <div class="habilidade-card">CSS3 & Sass</div>
+                    <div class="habilidade-card">IA</div>
+                    <div class="habilidade-card">Automação</div>
+                    <div class="habilidade-card">N8N</div>
                     <div class="habilidade-card">JavaScript</div>
                     <div class="habilidade-card">Python</div>
+                    <div class="habilidade-card">HTML</div>
                     <div class="habilidade-card">TypeScript</div>
                     <div class="habilidade-card">MySQL</div>
                     <div class="habilidade-card">React</div>
@@ -154,19 +198,18 @@
                     <div class="habilidade-card">Kotlin</div>
                     <div class="habilidade-card">C#</div>
                     <div class="habilidade-card">NodeJS</div>
-                    <div class="habilidade-card">n8n</div>
                 </div>
             </div>
         </section>
 
         <section id="contato">
             <div class="container">
-                <h2 data-scramble>Entre em Contato</h2>
+                <h2 data-scramble data-pt="Entre em Contato" data-en="Get in Touch">Entre em Contato</h2>
                 <form action="https://formspree.io/f/mwpqyjeb" method="POST" class="contact-form">
-                    <input type="text" name="nome" placeholder="Seu Nome" required>
-                    <input type="email" name="email" placeholder="Seu E-mail" required>
-                    <textarea name="mensagem" rows="5" placeholder="Sua Mensagem" required></textarea>
-                    <button type="submit" class="magnetic">Enviar Mensagem</button>
+                    <input type="text" name="nome" placeholder="Seu Nome" required data-pt-placeholder="Seu Nome" data-en-placeholder="Your Name">
+                    <input type="email" name="email" placeholder="Seu E-mail" required data-pt-placeholder="Seu E-mail" data-en-placeholder="Your Email">
+                    <textarea name="mensagem" rows="5" placeholder="Sua Mensagem" required data-pt-placeholder="Sua Mensagem" data-en-placeholder="Your Message"></textarea>
+                    <button type="submit" class="magnetic" data-pt="Enviar Mensagem" data-en="Send Message">Enviar Mensagem</button>
                 </form>
                 <div class="redes-sociais">
                     <a href="https://www.linkedin.com/in/kau%C3%AAmarini/" target="_blank" class="magnetic"><i class="fab fa-linkedin"></i></a>
