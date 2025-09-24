@@ -198,33 +198,49 @@ document.addEventListener('DOMContentLoaded', () => {
     const terminalContent = document.getElementById('terminal-content');
 
     const updateTerminalLanguage = (lang) => {
-        const socialLinks = {
-            github: 'https://github.com/kauemarini',
-            linkedin: 'https://linkedin.com/in/kauêmarini'
-        };
-        const translations = {
-            pt: {
-                welcome: 'Bem-vindo ao meu portfólio interativo! Digite <span class="command">help</span> para começar.',
-                help: `Comandos disponíveis:<div class="help-grid"><span class="help-command">sobre</span><span class="help-description">- Navega para a seção Sobre Mim</span><span class="help-command">projetos</span><span class="help-description">- Navega para a seção de Projetos</span><span class="help-command">habilidades</span><span class="help-description">- Navega para a seção de Habilidades</span><span class="help-command">contato</span><span class="help-description">- Navega para a seção de Contato</span><span class="help-command">social</span><span class="help-description">- Exibe os links das redes sociais</span><span class="help-command">clear</span><span class="help-description">- Limpa a tela do terminal</span></div>`,
-                commands: { 'sobre': 'Navegando para a seção Sobre...','projetos': 'Navegando para a seção Projetos...','habilidades': 'Navegando para a seção Habilidades...','contato': 'Navegando para a seção Contato...','social': `Abrindo redes sociais...<br>GitHub: <a href="${socialLinks.github}" target="_blank">${socialLinks.github}</a><br>LinkedIn: <a href="${socialLinks.linkedin}" target="_blank">${socialLinks.linkedin}</a>`,'clear': ''},
-                notFound: (cmd) => `Comando não encontrado: ${cmd}. Digite 'help' para ver a lista de comandos.`
+    const socialLinks = {
+        github: 'https://github.com/kauemarini',
+        linkedin: 'https://linkedin.com/in/kauêmarini'
+    };
+    const translations = {
+        pt: {
+            welcome: 'Bem-vindo ao meu portfólio interativo! Digite <span class="command">help</span> para começar.',
+            help: `Comandos disponíveis:<div class="help-grid"><span class="help-command">sobre</span><span class="help-description">- Navega para a seção Sobre Mim</span><span class="help-command">projetos</span><span class="help-description">- Navega para a seção de Projetos</span><span class="help-command">habilidades</span><span class="help-description">- Navega para a seção de Habilidades</span><span class="help-command">contato</span><span class="help-description">- Navega para a seção de Contato</span><span class="help-command">social</span><span class="help-description">- Exibe os links das redes sociais</span><span class="help-command">clear</span><span class="help-description">- Limpa a tela do terminal</span></div>`,
+            // --- CORREÇÃO AQUI ---
+            // As chaves agora são as mesmas do inglês para o mapeamento funcionar
+            commands: {
+                'about': 'Navegando para a seção Sobre...',
+                'projects': 'Navegando para a seção Projetos...',
+                'skills': 'Navegando para a seção Habilidades...',
+                'contact': 'Navegando para a seção Contato...',
+                'social': `Abrindo redes sociais...<br>GitHub: <a href="${socialLinks.github}" target="_blank">${socialLinks.github}</a><br>LinkedIn: <a href="${socialLinks.linkedin}" target="_blank">${socialLinks.linkedin}</a>`,
+                'clear': ''
             },
-            en: {
-                welcome: 'Welcome to my interactive portfolio! Type <span class="command">help</span> to get started.',
-                help: `Available commands:<div class="help-grid"><span class="help-command">about</span><span class="help-description">- Navigates to the About Me section</span><span class="help-command">projects</span><span class="help-description">- Navigates to the Projects section</span><span class="help-command">skills</span><span class="help-description">- Navigates to the Skills section</span><span class="help-command">contact</span><span class="help-description">- Navigates to the Contact section</span><span class="help-command">social</span><span class="help-description">- Displays social media links</span><span class="help-command">clear</span><span class="help-description">- Clears the terminal screen</span></div>`,
-                commands: { 'about': 'Navigating to About section...','projects': 'Navigating to Projects section...','skills': 'Navigating to Skills section...','contact': 'Navigating to Contact section...','social': `Opening social media...<br>GitHub: <a href="${socialLinks.github}" target="_blank">${socialLinks.github}</a><br>LinkedIn: <a href="${socialLinks.linkedin}" target="_blank">${socialLinks.linkedin}</a>`,'clear': ''},
-                notFound: (cmd) => `Command not found: ${cmd}. Type 'help' to see the list of commands.`
-            }
-        };
-        const currentTranslation = translations[lang];
-        terminalWelcomeMessage = currentTranslation.welcome;
-        terminalCommands = { help: currentTranslation.help, ...currentTranslation.commands };
-        terminalCommands.notFound = currentTranslation.notFound;
-        if (terminalContent) {
-            terminalContent.innerHTML = '';
-            printToTerminal(terminalWelcomeMessage);
+            notFound: (cmd) => `Comando não encontrado: ${cmd}. Digite 'help' para ver a lista de comandos.`
+        },
+        en: {
+            welcome: 'Welcome to my interactive portfolio! Type <span class="command">help</span> to get started.',
+            help: `Available commands:<div class="help-grid"><span class="help-command">about</span><span class="help-description">- Navigates to the About Me section</span><span class="help-command">projects</span><span class="help-description">- Navigates to the Projects section</span><span class="help-command">skills</span><span class="help-description">- Navigates to the Skills section</span><span class="help-command">contact</span><span class="help-description">- Navigates to the Contact section</span><span class="help-command">social</span><span class="help-description">- Displays social media links</span><span class="help-command">clear</span><span class="help-description">- Clears the terminal screen</span></div>`,
+            commands: {
+                'about': 'Navigating to About section...',
+                'projects': 'Navigating to Projects section...',
+                'skills': 'Navigating to Skills section...',
+                'contact': 'Navigating to Contact section...',
+                'social': `Opening social media...<br>GitHub: <a href="${socialLinks.github}" target="_blank">${socialLinks.github}</a><br>LinkedIn: <a href="${socialLinks.linkedin}" target="_blank">${socialLinks.linkedin}</a>`,
+                'clear': ''
+            },
+            notFound: (cmd) => `Command not found: ${cmd}. Type 'help' to see the list of commands.`
         }
     };
+    const currentTranslation = translations[lang];
+    terminalWelcomeMessage = currentTranslation.welcome;
+    terminalCommands = { help: currentTranslation.help, ...currentTranslation.commands };
+    terminalCommands.notFound = currentTranslation.notFound;
+    if (terminalContent) {
+        terminalContent.innerHTML = '';
+        printToTerminal(terminalWelcomeMessage);
+    }
+};
     
     const printToTerminal = (text) => {
         if (!terminalContent) return;
@@ -291,7 +307,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (terminalSection && terminalInput) {
             setTimeout(() => {
                 terminalSection.classList.add('visible');
-                terminalInput.focus();
             }, 100);
         }
     };
